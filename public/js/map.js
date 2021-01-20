@@ -17,7 +17,7 @@ async function getStores() {
                 coordinates: [store.location.coordinates[0], store.location.coordinates[1]]
             },
             properties: {
-                storeId: store.storeId,
+                address: store.location.formattedAddress,
                 icon: 'shop'
             }
         }
@@ -39,7 +39,7 @@ function loadMap(stores) {
             layout: { //layout is all about the icon that is there in the map
                 'icon-image': '{icon}-15',
                 'icon-size': 1.5,
-                'text-field': '{storeId}',
+                'text-field': '{address}',
                 'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
                 'text-offset': [0, 0.9],
                 'text-anchor': 'top'

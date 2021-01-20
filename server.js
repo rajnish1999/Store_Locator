@@ -1,6 +1,5 @@
 const path = require('path');
 const express = require('express');
-const dotenv = require('dotenv');
 const cors = require('cors');
 
 const storeRouter = require('./routers/store');
@@ -9,10 +8,6 @@ const connectDB = require('./config/db');
 
 const app = express();
 
-//load environment variables
-dotenv.config({
-    path : './config/config.env'
-})
 
 const publicPath = path.join(__dirname,"public");
 app.use(express.static(publicPath))
